@@ -1,4 +1,4 @@
-{ % load static %}
+{% load static %}
 
 
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -302,13 +302,13 @@
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="login" href="login.html" rel="nofollow" title="Log in to your customer account">
+                                        <a class="login" href="{% url 'users:login' %}" rel="nofollow" title="Log in to your customer account">
                                             <i class="fa fa-sign-in"></i>
                                             <span>Sign in</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="register" href="register.html" rel="nofollow" title="Register Account">
+                                        <a class="register" href="{% url 'users:register' %}" rel="nofollow" title="Register Account">
                                             <i class="fa fa-user"></i>
                                             <span>Register Account</span>
                                         </a>

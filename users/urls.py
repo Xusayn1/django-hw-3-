@@ -5,9 +5,9 @@ from users.views import account_view, login_view, register_view, reset_password_
 app_name = 'users'
 
 urlpatterns = [
-    path('', account_view, name='user_account'),
-    path('login/', login_view, name='user_login'),
-    path('register/', register_view, name='user_register'),
-    path('reset-password/', reset_password_view, name='user_reset_password'),
-   
+    path('', account_view, name='account'),
+    path('login/', login_view, name='login'),
+    path('register/', register_view, name='register'),
+    path('reset-password/', reset_password_view, name='reset_password'), 
+    
 ]

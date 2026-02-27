@@ -293,19 +293,19 @@
                                 <div class="account-list-content">
 
                                     <div>
-                                        <a class="login" href="account.html" rel="nofollow" title="Log in to your customer account">
+                                        <a class="login" href="{% url 'users:account' %}" rel="nofollow" title="Log in to your customer account">
                                             <i class="fa fa-cog"></i>
                                             <span>My Account</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="login" href="login.html" rel="nofollow" title="Log in to your customer account">
+                                        <a class="login" href="{% url 'users:login' %}" rel="nofollow" title="Log in to your customer account">
                                             <i class="fa fa-sign-in"></i>
                                             <span>Sign in</span>
                                         </a>
                                     </div>
                                     <div>
-                                        <a class="register" href="register.html" rel="nofollow" title="Register Account">
+                                        <a class="register" href="{% url 'users:register' %}" rel="nofollow" title="Register Account">
                                             <i class="fa fa-user"></i>
                                             <span>Register Account</span>
                                         </a>
@@ -317,7 +317,7 @@
                                         </a>
                                     </div>
                                     <div class="link_wishlist">
-                                        <a href="wishlist.html" title="My Wishlists">
+                                        <a href="{% url 'products:wishlist' %}" title="My Wishlists">
                                             <i class="fa fa-heart"></i>
                                             <span>My Wishlists</span>
                                         </a>
@@ -343,13 +343,13 @@
                                             <li class="list-inline-item">
                                                 <a href="#">
                                                     <img class="img-fluid" src="/{% static 'img/home/home1-flas2.jpg' %}
-" alt="Italiano" width="16" height="11">
+                                                    " alt="Italiano" width="16" height="11">
                                                 </a>
                                             </li>
                                             <li class="list-inline-item">
                                                 <a href="#">
                                                     <img class="img-fluid" src="/{% static 'img/home/home1-flas3.jpg' %}
-" alt="Français" width="16" height="11">
+                                                        " alt="Français" width="16" height="11">
                                                 </a>
                                             </li>
                                             <li class="list-inline-item">

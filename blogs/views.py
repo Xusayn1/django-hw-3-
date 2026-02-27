@@ -1,21 +1,31 @@
 from django.shortcuts import render
 
-from blogs.models import Blog, BlogStatus
+from blogs.models import Blog, BlogStatus, Category, Tag
 
-# Create your views here.
 
-def blog_list_view(request):
+def blogs_list_view(request):
     context = {
-        'blogs': Blog.objects.filter(status=BlogStatus.PUBLISHED)
+        "blogs": Blog.objects.filter(status=BlogStatus.PUBLISHED),
+        "categories": Category.objects.filter(parent=None),
+        "tags": Tag.objects.all(),
+        "recent_posts": Blog.objects.order_by('-created_at')[:2]
     }
-    return render(request, 'blogs/blog-list.html', context)
+    return render(
+        request, 'blogs/blogs-list.html',
+        context
+    )
+
 
 def blog_detail_view(request, pk):
     try:
-        blog = Blog.objects.get(pk=pk)
+        blog = Blog.objects.get(id=pk)
     except Blog.DoesNotExist:
-        return render(request, 'blogs/blog-detail.html', {'error': 'Blog not found'})
+        return render(request, 'shared/404.html')
+
     context = {
-        'blog': blog
+        "blog": blog
     }
-    return render(request, 'blogs/blog-detail.html', context)
+    return render(
+        request, 'blogs/blog-detail.html',
+        context
+    )
